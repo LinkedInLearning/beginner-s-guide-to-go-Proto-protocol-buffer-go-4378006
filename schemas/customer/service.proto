@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package bigstar.customer;
+
+option go_package = "github.com/LinkedInLearning/beginner-s-guide-to-go-Proto-protocol-buffer-go-4378006/go/customer";
+
+option java_package = "com.example.bigstar.customer.service";
+option java_outer_classname = "CustomerProto";
+option java_multiple_files = true;
+
+import "customer/message.proto";
+
+service CustomerService {
+  rpc Sigin(SigninRequest) returns (SigninResponse);
+  rpc Login(LoginRequest) returns (LoginResponse);
+}

@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package bigstar.character;
+
+option go_package = "github.com/LinkedInLearning/beginner-s-guide-to-go-Proto-protocol-buffer-go-4378006/go/character";
+
+option java_package = "com.example.bigstar.character.message";
+option java_outer_classname = "CharacterProto";
+option java_multiple_files = true;
+
+import "header/header.proto";
+
+message Character {
+  int32 id = 1;
+  string name = 2;
+  string category = 3;
+  string bio = 4;
+  string description = 5;
+}
+
+message Empty {}
+
+message AllCharactersRequest {
+  Header header = 1;
+  Empty query = 2;
+}
+
+message Result {
+  Character character = 1;
+}
+
+message AllCharactersResponse {
+  Header header = 1;
+  repeated Result results = 2;
+}
+
+message GetCharacterRequest {
+  Header header = 1;
+  int32 character_id = 2;
+}
+
+message GetCharacterResponse {
+  Header header = 1;
+  Result result = 2;
+}
