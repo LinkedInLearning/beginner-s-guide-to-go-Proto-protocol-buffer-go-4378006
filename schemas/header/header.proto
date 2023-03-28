@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package bigstar;
+
+option go_package = "github.com/LinkedInLearning/beginner-s-guide-to-go-Proto-protocol-buffer-go-4378006/go/header";
+
+option java_package = "com.example.bigstar.header";
+option java_outer_classname = "HeaderProto";
+option java_multiple_files = true;
+
+message UUID {
+    string Value = 1;
+}
+
+message Header {
+    UUID span = 1;
+    UUID root_span = 2;
+}
